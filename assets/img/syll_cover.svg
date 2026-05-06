@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Syll placeholder">
+  <rect width="800" height="500" fill="#2d2540"/>
+  <text x="400" y="248" font-family="'Roboto Slab', Georgia, serif" font-size="72" font-weight="500" fill="#f3eddf" text-anchor="middle" dominant-baseline="middle">Syll</text>
+  <text x="400" y="312" font-family="'Roboto', sans-serif" font-size="20" letter-spacing="2" fill="#a89bc0" text-anchor="middle">COMPANION</text>
+  <text x="400" y="478" font-family="'Roboto', sans-serif" font-size="11" fill="#675a82" text-anchor="middle">replace with assets/img/syll_cover.jpg</text>
+</svg>

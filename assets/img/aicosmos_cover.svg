@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="AICosmos placeholder">
+  <rect width="800" height="500" fill="#1f3a5f"/>
+  <text x="400" y="248" font-family="'Roboto Slab', Georgia, serif" font-size="72" font-weight="500" fill="#f3eddf" text-anchor="middle" dominant-baseline="middle">AICosmos</text>
+  <text x="400" y="312" font-family="'Roboto', sans-serif" font-size="20" letter-spacing="2" fill="#9aa9b9" text-anchor="middle">PLATFORM</text>
+  <text x="400" y="478" font-family="'Roboto', sans-serif" font-size="11" fill="#5d6f86" text-anchor="middle">replace with assets/img/aicosmos_cover.jpg</text>
+</svg>

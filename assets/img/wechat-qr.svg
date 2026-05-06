@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="WeChat QR placeholder">
+  <rect width="240" height="240" fill="#fff" stroke="#ddd" stroke-width="2"/>
+  <text x="120" y="100" font-family="'Roboto', sans-serif" font-size="14" fill="#666" text-anchor="middle">WeChat QR</text>
+  <text x="120" y="120" font-family="'Roboto', sans-serif" font-size="11" fill="#999" text-anchor="middle">placeholder</text>
+  <text x="120" y="160" font-family="'Roboto', sans-serif" font-size="9" fill="#aaa" text-anchor="middle">drop wechat-qr.png here</text>
+  <text x="120" y="174" font-family="'Roboto', sans-serif" font-size="9" fill="#aaa" text-anchor="middle">and uncomment in</text>
+  <text x="120" y="188" font-family="'Roboto', sans-serif" font-size="9" fill="#aaa" text-anchor="middle">_data/socials.yml</text>
+</svg>
