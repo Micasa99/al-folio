@@ -51,3 +51,10 @@ cv/*.toc
 cv/*.fdb_latexmk
 cv/*.fls
 cv/*.synctex.gz
+
+# Compiled CV PDFs — kept locally only; not exposed on the live site.
+# The web /cv/ page (rendered from _data/cv.yml) is the only public CV form.
+assets/pdf/cv.pdf
+assets/pdf/cv_zh.pdf
+cv/cv_en.pdf
+cv/cv_zh.pdf

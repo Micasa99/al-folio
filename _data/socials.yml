@@ -18,8 +18,9 @@ email: bozhang23@mails.tsinghua.edu.cn
 #   title: AICosmos
 #   url: https://aicosmos.ai
 
-# Primary CV (English). Chinese version also available at /assets/pdf/cv_zh.pdf —
-# link it manually wherever you want. Source files in cv/ (xelatex).
-cv_pdf: /assets/pdf/cv.pdf
+# CV PDF intentionally NOT exposed online — only the rendered web /cv/ page
+# (driven by _data/cv.yml) is public. PDFs live locally in assets/pdf/ but
+# are gitignored, so the live site has no formal-CV download link.
+# cv_pdf: /assets/pdf/cv.pdf
 
 rss_icon: false
