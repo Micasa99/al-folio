@@ -30,6 +30,8 @@
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
 \RequirePackage{graphicx}
+\RequirePackage{fontawesome5}
+\RequirePackage{academicons}
 \RequirePackage{ragged2e}
 
 % --- Color palette --------------------------------------------------------
@@ -203,4 +205,10 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % --- Convenience separator (used in venue lines, contact line) ------------
-\newcommand{\cvsep}{\,{\color{muted}\textbar}\,}
+% Middle dot is softer than the upright bar; reads as a quiet typographic
+% beat instead of a "fence post". Used everywhere in cv_en.tex / cv_zh.tex.
+\newcommand{\cvsep}{\,{\color{muted}\textperiodcentered}\,}
+
+% --- Icon helpers for contact lines ---------------------------------------
+% \cvicon{<faIcon>} renders a muted-grey icon followed by a thin space.
+\newcommand{\cvicon}[1]{{\color{muted}#1}\,}
