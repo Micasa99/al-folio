@@ -1,0 +1,91 @@
+% ============================================================================
+% 张博 — 个人简历（中文版）
+% 编译：xelatex cv_zh.tex（两次）
+% ============================================================================
+\documentclass[10pt]{article}
+\usepackage{bo-cv}
+
+\cvfooter{张博 \cvsep\ 个人简历 \cvsep\ 2026 年 5 月更新}
+
+\begin{document}
+
+% ----- 标题 ----------------------------------------------------------------
+\cvheader[image.png]%
+  {张博}%
+  {Bo Zhang}%
+  {本科生 \cvsep\ 清华大学自动化系}%
+  {%
+    \href{mailto:bozhang23@mails.tsinghua.edu.cn}{bozhang23@mails.tsinghua.edu.cn} \cvsep\ \href{https://your-github-username.github.io}{个人主页}\\%
+    \href{https://github.com/your-github-username}{GitHub} \cvsep\ \href{https://scholar.google.com/}{Google Scholar}%
+  }
+
+% ----- 教育背景 ------------------------------------------------------------
+\section{教育背景}
+
+\cventry%
+  {清华大学 \cvsep\ 自动化系}%
+  {工学学士（B.Eng.），自动化 \cvsep\ 多模态智能因材施教方向班}%
+  {2023.09 -- 2027.07（预计）}%
+  {%
+    综合学分绩 3.8/4.0 \cvsep\ 专业内排名 61/172 \cvsep\ 因材施教方向班班长（2024 -- 至今）\\
+    {\itshape 主要修读课程}：模式识别 \cvsep\ 生成式人工智能 \cvsep\ 运筹学%
+  }
+
+% ----- 发表论文 ------------------------------------------------------------
+\section{发表论文}
+
+\cvtheme{计算机使用智能体 \cvsep\ GUI grounding、训练-free 推理}{2024 -- 至今}
+
+\cvpub%
+  {{BAMI}: Training-Free Bias Mitigation in {GUI} Grounding}%
+  {Borui~Zhang*, \textbf{Bo~Zhang}*, Bo~Wang*, Wenzhao~Zheng, Yuhao~Cheng, Liang~Tang, Yiqiang~Yan, Jie~Zhou, Jiwen~Lu}%
+  {CVPR 2026 \cvsep\ {*} 共同第一作者 \cvsep\ 隶属：清华大学 / 联想研究院}%
+  {\href{https://github.com/Neur-IO/BAMI}{[code]}}
+
+\cvtheme{AI for science \cvsep\ 具身 LLM 智能体与科学软件交互}{2025 -- 至今}
+
+\cvpub%
+  {Grounding {LLMs} in Scientific Discovery via Embodied Actions}%
+  {\textbf{Bo~Zhang}*, Jinfeng~Zhou*, Yuxuan~Chen, Jianing~Yin, Minlie~Huang, Hongning~Wang}%
+  {ICML 2026 \cvsep\ {*} 共同第一作者 \cvsep\ 隶属：清华大学}%
+  {\href{https://anonymous.4open.science/r/EmbodiedAct}{[code]}}
+
+% ----- 研究与项目 ----------------------------------------------------------
+\section{研究与项目}
+
+\cventry%
+  {SRT --- GUI 桌面视觉理解}%
+  {清华大学本科生研究训练计划（SRT） \cvsep\ 独立研究}%
+  {2024 -- 至今}%
+  {围绕 computer-use agents 的桌面 GUI 视觉理解开展独立研究，方法论上为 BAMI 的偏置归因分析奠定基础。}
+
+\cventry%
+  {AICosmos --- 教育多智能体平台}%
+  {贡献者 \cvsep\ 清华大学计算机系孵化项目}%
+  {2025 -- 至今}%
+  {多智能体编排平台，整合 Tutor、Role-Play、Q\&A Bot 三类智能体，覆盖辅导、演练、问答；\mbox{已上线} \href{https://aicosmos.ai}{aicosmos.ai}。}
+
+\cventry%
+  {AEI4U --- 模拟电子技术 AI 助教}%
+  {项目负责人 \cvsep\ 基于 Dify-THU 平台}%
+  {2025}%
+  {课程级 AI 助教，集成电路拓扑识别、SPICE 仿真接入与个性化学习画像；获第 43 届\mbox{挑战杯} AI 助教专项赛 \mbox{\textbf{特等奖}}。}
+
+% ----- 荣誉、专利与社会工作 ------------------------------------------------
+\section{荣誉、专利与社会工作}
+
+\cvrow{荣誉}{清华大学第 43 届\mbox{挑战杯} AI 助教智能体设计专项赛 \mbox{\textbf{特等奖}}（2025）}
+\cvrow{专利}{%
+  《一种基于示教-推理-执行闭环的多模态智能体系统》—— 与鲁继文、周杰、张博睿、江承昊（\mbox{清华大学}，2026.03，\mbox{终审通过}）\newline%
+  《基于具身科学代理的科学发现检验方法及系统》—— 与王宏宁、周金锋（\mbox{清华大学}，2026.02，\mbox{终审通过}）%
+}
+\cvrow{社工}{多模态智能因材施教方向班 班长（2024 -- 至今）\cvsep\ 自动化系篮球队 队长}
+
+% ----- 技能与语言 ----------------------------------------------------------
+\section{技能与语言}
+
+\cvrow{研究方法}{偏置归因（MPD） \cvsep\ 训练-free 推理 \cvsep\ 具身动作锚定 \cvsep\ 感知--执行回路设计 \cvsep\ 多智能体编排}
+\cvrow{工程能力}{Python \cvsep\ PyTorch \cvsep\ FastAPI \cvsep\ LiteLLM \cvsep\ PyQt6 \cvsep\ MATLAB \cvsep\ Dify}
+\cvrow{语言}{普通话（母语）\cvsep\ 英语（流利，可进行学术阅读、写作与口头交流）}
+
+\end{document}

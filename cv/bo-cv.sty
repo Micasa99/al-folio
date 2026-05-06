@@ -1,0 +1,206 @@
+% ============================================================================
+% bo-cv.sty — Restrained academic CV style for Bo Zhang (张博)
+%
+% Designed to match the personal-site web design philosophy:
+% Text-driven, single-accent (deep navy #1f3a5f), Charter serif body,
+% Helvetica Neue / PingFang SC for headers. No icons, no big color blocks,
+% no ALL-CAPS section headers — Title Case + thin gray rule.
+%
+% Requires XeLaTeX. Tested with TeX Live 2024 on macOS.
+%
+% Fonts (built-in macOS):
+%   Charter        — English serif body
+%   Helvetica Neue — English sans (headers, name)
+%   Songti SC      — Chinese serif body
+%   PingFang SC    — Chinese sans (headers, name)
+% ============================================================================
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bo-cv}[2026/05/05 v1.0 Bo Zhang's restrained academic CV style]
+
+% --- Required packages ----------------------------------------------------
+\RequirePackage[a4paper, top=0.55in, bottom=0.55in, left=0.75in, right=0.75in]{geometry}
+\RequirePackage{fontspec}
+\RequirePackage{xeCJK}
+\RequirePackage{xcolor}
+\RequirePackage{tabularx}
+\RequirePackage{array}
+\RequirePackage{enumitem}
+\RequirePackage{hyperref}
+\RequirePackage{titlesec}
+\RequirePackage{fancyhdr}
+\RequirePackage{graphicx}
+\RequirePackage{ragged2e}
+
+% --- Color palette --------------------------------------------------------
+\definecolor{ink}{HTML}{1c1c1f}      % body text
+\definecolor{muted}{HTML}{6b6b75}    % dates, subtitles
+\definecolor{accent}{HTML}{1f3a5f}   % deep navy — matches website nav
+\definecolor{rule}{HTML}{c8c8d2}     % section underlines
+
+% --- Fonts ----------------------------------------------------------------
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Charter}
+\setsansfont{Helvetica Neue}
+\newfontfamily\headerfont{Helvetica Neue}
+
+% Chinese (used by both EN and ZH versions; idle when no CJK present)
+% Songti SC has no true italic face on macOS; keep CJK upright in italic contexts.
+\setCJKmainfont[ItalicFont={Songti SC}]{Songti SC}
+\setCJKsansfont{PingFang SC}
+\newCJKfontfamily\cjkheaderfont{PingFang SC}
+
+% --- Body color and links -------------------------------------------------
+\color{ink}
+\hypersetup{
+  colorlinks = true,
+  urlcolor   = accent,
+  linkcolor  = accent,
+  citecolor  = accent,
+  pdftitle   = {Bo Zhang — Curriculum Vitae},
+  pdfauthor  = {Bo Zhang}
+}
+
+% --- Spacing --------------------------------------------------------------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.15em}
+\linespread{1.0}
+
+% --- Header (optional photo + name + subname + role + contact) ------------
+% \cvheader[photo.png]{Name}{Subname}{Role line}{Contact line}
+% Photo is optional; placed top-right at 1.3in tall (Chinese 一寸 photo).
+% Text minipage uses the same fixed height so both columns share top edge.
+\newlength{\cvtxtwidth}
+\newcommand{\cvtxtblock}[4]{%
+  \raggedright%
+  {\fontsize{28}{32}\selectfont\headerfont\bfseries\color{ink}#1}%
+  \ifx\relax#2\relax\else%
+    \hspace{0.4em}{\fontsize{18}{22}\selectfont\headerfont\color{muted}#2}%
+  \fi%
+  \par\vspace{0.3em}%
+  \ifx\relax#3\relax\else%
+    {\fontsize{11}{14}\selectfont\color{muted}#3}\par\vspace{0.35em}%
+  \fi%
+  \ifx\relax#4\relax\else%
+    {\fontsize{10}{13}\selectfont\color{ink}#4}\par%
+  \fi%
+}
+\newcommand{\cvheader}[5][]{%
+  \ifx\relax#1\relax%
+    % no photo — text fills full width, natural height
+    \setlength{\cvtxtwidth}{\linewidth}%
+    \noindent\begin{minipage}[t]{\cvtxtwidth}%
+      \cvtxtblock{#2}{#3}{#4}{#5}%
+    \end{minipage}%
+  \else%
+    % with photo — both columns share fixed height, top-anchored
+    \setlength{\cvtxtwidth}{\dimexpr\linewidth - 1.18in\relax}%
+    \noindent\begin{minipage}[c][1.3in][t]{\cvtxtwidth}%
+      \cvtxtblock{#2}{#3}{#4}{#5}%
+    \end{minipage}%
+    \hfill%
+    \begin{minipage}[c][1.3in][t]{1.0in}%
+      \raggedleft\includegraphics[height=1.3in]{#1}%
+    \end{minipage}%
+  \fi%
+  \par\vspace{0.5em}%
+  {\color{rule}\rule{\linewidth}{0.5pt}}%
+  \par\vspace{0.3em}%
+}
+
+% --- Section headers ------------------------------------------------------
+\titleformat{\section}
+  {\bfseries\fontsize{11}{13}\selectfont\headerfont\color{accent}}
+  {}{0pt}{}[%
+    \vspace{0.2em}%
+    {\color{rule}\titlerule[0.4pt]}%
+    \vspace{-0.2em}%
+  ]
+\titlespacing*{\section}{0pt}{0.4em}{0.2em}
+
+% --- Multi-line entry: title + subtitle on left, date on right ------------
+% \cventry{Title}{Subtitle}{Right column (date)}{Description body, can be empty}
+\newcommand{\cventry}[4]{%
+  \noindent\begin{minipage}[t]{0.70\linewidth}%
+    \raggedright%
+    {\bfseries\color{ink}#1}\\%
+    {\itshape\color{muted}\fontsize{10}{12.5}\selectfont#2}%
+  \end{minipage}%
+  \hfill%
+  \begin{minipage}[t]{0.28\linewidth}%
+    \raggedleft%
+    {\color{muted}\fontsize{10}{12}\selectfont#3}%
+  \end{minipage}%
+  \par%
+  \ifx\relax#4\relax\else%
+    \vspace{0.05em}%
+    {\fontsize{10}{12.5}\selectfont#4}\par%
+  \fi%
+  \vspace{0.15em}%
+}
+
+% --- Research-direction subtitle inside Publications -----------------------
+% \cvtheme{Direction · sub-areas}{Date range (right)}
+% Mirrors Borui Zhang's CV pattern: theme name on the left, date on the right,
+% papers listed via \cvpub directly underneath. Keeps "what I work on" and
+% "papers I've published" tied together rather than as separate sections.
+\newcommand{\cvtheme}[2]{%
+  \vspace{0.35em}%
+  \noindent\begin{minipage}[t]{0.72\linewidth}%
+    \raggedright%
+    {\bfseries\color{ink}#1}%
+  \end{minipage}%
+  \hfill%
+  \begin{minipage}[t]{0.26\linewidth}%
+    \raggedleft%
+    {\color{muted}\fontsize{9.5}{12}\selectfont#2}%
+  \end{minipage}%
+  \par\vspace{0.1em}%
+}
+
+% --- Publication entry: title / authors / venue / links -------------------
+% \cvpub{Title}{Authors (mark current author with \textbf{...})}{Venue}{Links}
+\newcommand{\cvpub}[4]{%
+  \begingroup\RaggedRight%
+  {\bfseries\color{ink}#1}\par%
+  {\fontsize{9.6}{12}\selectfont#2}\par%
+  {\itshape\color{muted}\fontsize{10}{12.5}\selectfont#3}%
+  \ifx\relax#4\relax\else%
+    \,\,{\fontsize{9.5}{12}\selectfont#4}%
+  \fi%
+  \par\vspace{0.15em}%
+  \endgroup%
+}
+
+% --- Labeled single-line item (Skills, Languages) -------------------------
+% \cvrow{Label}{Content}
+\newcommand{\cvrow}[2]{%
+  \begingroup%
+  \noindent\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.105\linewidth}@{\hspace{0.75em}}>{\RaggedRight\arraybackslash}X@{}}%
+    {\itshape\color{muted}\fontsize{10}{12.5}\selectfont#1} & {\fontsize{10}{12.5}\selectfont#2}%
+  \end{tabularx}%
+  \endgroup%
+  \par\vspace{0.05em}%
+}
+
+% --- Itemize tightening ---------------------------------------------------
+\setlist[itemize]{
+  leftmargin = 1.1em,
+  itemsep    = 0.0em,
+  topsep     = 0.05em,
+  parsep     = 0pt
+}
+
+% --- Footer ---------------------------------------------------------------
+\newcommand{\cvfootertext}{}
+\newcommand{\cvfooter}[1]{\renewcommand{\cvfootertext}{#1}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{\fontsize{9}{11}\selectfont\color{muted}\cvfootertext}
+\fancyfoot[R]{\fontsize{9}{11}\selectfont\color{muted}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% --- Convenience separator (used in venue lines, contact line) ------------
+\newcommand{\cvsep}{\,{\color{muted}\textbar}\,}

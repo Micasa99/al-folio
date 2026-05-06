@@ -1,0 +1,93 @@
+% ============================================================================
+% Bo Zhang — English CV
+% Compile: xelatex cv_en.tex (twice)
+% ============================================================================
+\documentclass[10pt]{article}
+\usepackage{bo-cv}
+
+\cvfooter{Bo Zhang \cvsep\ Curriculum Vitae \cvsep\ Last updated May 2026}
+
+\begin{document}
+
+% ----- Header --------------------------------------------------------------
+% (Remove the [image.png] arg below if you'd rather submit a photo-less CV
+%  — common in U.S. academic applications.)
+\cvheader[image.png]%
+  {Bo Zhang}%
+  {张博}%
+  {Undergraduate researcher \cvsep\ Department of Automation, Tsinghua University}%
+  {%
+    \href{mailto:bozhang23@mails.tsinghua.edu.cn}{bozhang23@mails.tsinghua.edu.cn} \cvsep\ \href{https://your-github-username.github.io}{personal site}\\%
+    \href{https://github.com/your-github-username}{GitHub} \cvsep\ \href{https://scholar.google.com/}{Google Scholar}%
+  }
+
+% ----- Education -----------------------------------------------------------
+\section{Education}
+
+\cventry%
+  {Tsinghua University \cvsep\ Department of Automation}%
+  {B.Eng.\ in Automation \cvsep\ Multimodal Intelligence Honors Track}%
+  {2023.09 -- 2027.07 (expected)}%
+  {%
+    GPA 3.8/4.0 \cvsep\ class rank 61/172 \cvsep\ Class President of the Honors Track (2024 -- present)\\
+    {\itshape Selected courses}: Pattern Recognition \cvsep\ Generative AI \cvsep\ Operations Research%
+  }
+
+% ----- Selected Publications ----------------------------------------------
+\section{Selected Publications}
+
+\cvtheme{Computer-use agents \cvsep\ GUI grounding, training-free inference}{2024 -- present}
+
+\cvpub%
+  {{BAMI}: Training-Free Bias Mitigation in {GUI} Grounding}%
+  {Borui Zhang*, \textbf{Bo Zhang}*, Bo Wang*, Wenzhao Zheng, Yuhao Cheng, Liang Tang, Yiqiang Yan, Jie Zhou, Jiwen Lu}%
+  {CVPR 2026 \cvsep\ {*} Equal contribution}%
+  {\href{https://github.com/Neur-IO/BAMI}{[code]}}
+
+\cvtheme{AI for scientific discovery \cvsep\ embodied LLM agents in simulation}{2025 -- present}
+
+\cvpub%
+  {Grounding {LLMs} in Scientific Discovery via Embodied Actions}%
+  {\textbf{Bo Zhang}*, Jinfeng Zhou*, Yuxuan Chen, Jianing Yin, Minlie Huang, Hongning Wang}%
+  {ICML 2026 \cvsep\ {*} Equal contribution}%
+  {\href{https://anonymous.4open.science/r/EmbodiedAct}{[code]}}
+
+% ----- Research \& Projects -----------------------------------------------
+\section{Research \& Projects}
+
+\cventry%
+  {SRT --- GUI Desktop Visual Understanding}%
+  {Tsinghua Student Research Training program \cvsep\ independent research}%
+  {2024 -- present}%
+  {Visual understanding of desktop GUIs as a foundation for computer-use agents; methodological precursor to BAMI's bias-attribution analysis.}
+
+\cventry%
+  {AICosmos --- Educational Multi-Agent Platform}%
+  {Contributor \cvsep\ incubated at Tsinghua's Department of Computer Science}%
+  {2025 -- present}%
+  {Multi-agent platform composing tutor, role-play, and Q\&A agents into a course-grade assistant. Live at \href{https://aicosmos.ai}{aicosmos.ai}.}
+
+\cventry%
+  {AEI4U --- AI Teaching Assistant for Analog Electronics}%
+  {Project Lead \cvsep\ built on the Dify-THU platform}%
+  {2025}%
+  {Course-grade AI TA with circuit-topology recognition, SPICE-in-the-loop simulation, and adaptive learner profiling. \textbf{Grand Prize}, Tsinghua 43rd Challenge Cup, AI Teaching-Agent Design Track.}
+
+% ----- Honors, Patents \& Service -----------------------------------------
+\section{Honors, Patents \& Service}
+
+\cvrow{Honors}{Grand Prize, Tsinghua 43rd Challenge Cup --- AI Teaching-Agent Design Track (2025)}
+\cvrow{Patents}{%
+  ``A Multimodal Agent System Based on a Demonstration--Inference--Execution Closed Loop'' --- with J.\ Lu, J.\ Zhou, B.\ Zhang (Borui), C.\ Jiang (Tsinghua, 2026.03; final review passed)\newline%
+  ``Scientific Discovery Verification via Embodied Scientific Agents'' --- with H.\ Wang, J.\ Zhou (Tsinghua, 2026.02; final review passed)%
+}
+\cvrow{Service}{Class President, Multimodal Intelligence Honors Track (2024 -- present) \cvsep\ Captain, Department of Automation Basketball Team}
+
+% ----- Skills --------------------------------------------------------------
+\section{Skills \& Languages}
+
+\cvrow{Research}{bias attribution (MPD) \cvsep\ training-free inference \cvsep\ embodied action grounding \cvsep\ perception--execution loops \cvsep\ multi-agent orchestration}
+\cvrow{Engineering}{Python \cvsep\ PyTorch \cvsep\ FastAPI \cvsep\ LiteLLM \cvsep\ PyQt6 \cvsep\ MATLAB \cvsep\ Dify}
+\cvrow{Languages}{Mandarin (native) \cvsep\ English (fluent, academic reading and writing)}
+
+\end{document}

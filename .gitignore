@@ -1,6 +1,7 @@
 _site
 .bundle
 .DS_store
+.DS_Store
 .idea
 .jekyll-cache
 .jekyll-metadata
@@ -13,3 +14,40 @@ assets/rendercv/rendercv_output/*.typ
 Gemfile.lock
 node_modules/
 vendor
+
+# --- private / out-of-scope artifacts (not pushed to GitHub) ---
+# Research source folders (paper PDFs and LaTeX — kept locally only)
+AEI4U/
+Awesome-CV/
+BAMI/
+aicosmos/
+embodiedact/
+syll/
+
+# Other repo clones / experimental folders
+Micasa99.github.io/
+self-page/
+isolated_personal_page/
+
+# Loose root-level files (originals already integrated into assets/)
+/image.png
+/image*.png
+/image copy*.png
+/me.jpg
+/cv_en.pdf
+/cv_zh.pdf
+/cv_zh copy.pdf
+/个人介绍.md
+
+# Overlay folder — duplicate of root content; kept locally as source-of-truth
+# but not needed in the published repo
+personal-site/
+
+# LaTeX build artifacts (compiled PDFs are in assets/pdf/; source kept in cv/)
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.toc
+cv/*.fdb_latexmk
+cv/*.fls
+cv/*.synctex.gz

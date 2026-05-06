@@ -1,14 +1,25 @@
-# this file contains the social media links and usernames of the author
-# the socials will be displayed in the order they are defined here
-# for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
-cv_pdf: /assets/pdf/example_pdf.pdf # path to your CV PDF file
-email: you@example.com # your email address
-inspirehep_id: 1010907 # Inspire HEP author ID
-rss_icon: true # comment this line to hide the RSS icon
-scholar_userid: qc6CJjYAAAAJ # your Google Scholar ID
-# wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
-# whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
-custom_social: # can be any name here other than the ones already defined in the jekyll-socials plugin
-  logo: https://www.alberteinstein.com/wp-content/uploads/2024/03/cropped-favicon-192x192.png # can be png, svg, jpg
-  title: Custom Social
-  url: https://www.alberteinstein.com/
+# Social links shown in the navbar and on the about page.
+# Order here = order rendered. Comment out any line you don't yet have.
+
+email: bozhang23@mails.tsinghua.edu.cn
+
+# TODO: fill in after registering.
+# scholar_userid:        # e.g. AAAAAAAAAAAA — your Google Scholar ID
+# github_username:       # e.g. zhangbo
+
+# WeChat QR is shown if the file exists. Drop a 240x240 PNG at
+# assets/img/wechat-qr.png to enable it, then uncomment below.
+# wechat_qr: wechat-qr.png
+
+# Re-enable after dropping a 64x64 logo at assets/img/aicosmos-logo.png.
+# (jekyll-socials cannot reliably fetch external favicons at build time.)
+# custom_social:
+#   logo: /assets/img/aicosmos-logo.png
+#   title: AICosmos
+#   url: https://aicosmos.ai
+
+# Primary CV (English). Chinese version also available at /assets/pdf/cv_zh.pdf —
+# link it manually wherever you want. Source files in cv/ (xelatex).
+cv_pdf: /assets/pdf/cv.pdf
+
+rss_icon: false
