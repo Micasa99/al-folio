@@ -37,8 +37,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "news-aei4u-won-the-grand-prize-特等奖-at-tsinghua-s-43rd-challenge-cup-ai-teaching-agent-design-track-for-an-analog-electronics-teaching-assistant-on-dify-thu",
-          title: 'AEI4U won the Grand Prize (特等奖) at Tsinghua’s 43rd Challenge Cup — AI...',
+        },{id: "news-aei4u-won-the-grand-prize-at-tsinghua-s-43rd-challenge-cup-ai-teaching-agent-design-track-for-an-analog-electronics-teaching-assistant-on-dify-thu",
+          title: 'AEI4U won the Grand Prize at Tsinghua’s 43rd Challenge Cup — AI Teaching-Agent...',
           description: "",
           section: "News",},{id: "news-aicosmos-tsinghua-s-educational-multi-agent-platform-went-public-at-aicosmos-ai",
           title: 'AICosmos — Tsinghua’s educational multi-agent platform — went public at aicosmos.ai.',
