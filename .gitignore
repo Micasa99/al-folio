@@ -17,17 +17,19 @@ vendor
 
 # --- private / out-of-scope artifacts (not pushed to GitHub) ---
 # Research source folders (paper PDFs and LaTeX — kept locally only)
-AEI4U/
-Awesome-CV/
-BAMI/
-aicosmos/
-embodiedact/
-syll/
+# NOTE: leading slash anchors to repo root, so assets/img/aei4u/ etc. are
+# NOT affected by these rules (macOS filesystem is case-insensitive).
+/AEI4U/
+/Awesome-CV/
+/BAMI/
+/aicosmos/
+/embodiedact/
+/syll/
 
 # Other repo clones / experimental folders
-Micasa99.github.io/
-self-page/
-isolated_personal_page/
+/Micasa99.github.io/
+/self-page/
+/isolated_personal_page/
 
 # Loose root-level files (originals already integrated into assets/)
 /image.png
@@ -36,8 +38,11 @@ isolated_personal_page/
 /me.jpg
 /cv_en.pdf
 /cv_zh.pdf
-/cv_zh copy.pdf
+/cv_zh*.pdf
 /个人介绍.md
+/AICosmos_EN*.mp4
+/Weixin Image_*.jpg
+/texput.log
 
 # Overlay folder — duplicate of root content; kept locally as source-of-truth
 # but not needed in the published repo
@@ -56,5 +61,4 @@ cv/*.synctex.gz
 # The web /cv/ page (rendered from _data/cv.yml) is the only public CV form.
 assets/pdf/cv.pdf
 assets/pdf/cv_zh.pdf
-cv/cv_en.pdf
-cv/cv_zh.pdf
+cv/*.pdf

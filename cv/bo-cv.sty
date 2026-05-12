@@ -118,7 +118,7 @@
     {\color{rule}\titlerule[0.4pt]}%
     \vspace{-0.2em}%
   ]
-\titlespacing*{\section}{0pt}{0.4em}{0.2em}
+\titlespacing*{\section}{0pt}{0.25em}{0.1em}
 
 % --- Multi-line entry: title + subtitle on left, date on right ------------
 % \cventry{Title}{Subtitle}{Right column (date)}{Description body, can be empty}
@@ -138,26 +138,40 @@
     \vspace{0.05em}%
     {\fontsize{10}{12.5}\selectfont#4}\par%
   \fi%
-  \vspace{0.15em}%
+  \vspace{0.05em}%
 }
 
-% --- Research-direction subtitle inside Publications -----------------------
-% \cvtheme{Direction · sub-areas}{Date range (right)}
-% Mirrors Borui Zhang's CV pattern: theme name on the left, date on the right,
-% papers listed via \cvpub directly underneath. Keeps "what I work on" and
-% "papers I've published" tied together rather than as separate sections.
-\newcommand{\cvtheme}[2]{%
-  \vspace{0.35em}%
-  \noindent\begin{minipage}[t]{0.72\linewidth}%
+% --- Research-direction header (used inside Publications and Projects) ----
+% \cvtheme{Program name}{Sub-areas (optional, italic muted)}{Date range or empty}
+%
+% Visual hierarchy: this sits ABOVE the publication / project titles and is
+% deliberately styled differently from them — bold + accent navy + italic
+% sub-area + generous breathing room below — so the reader sees the entry
+% as belonging-to the program, not as a sibling of it.
+%
+% Echoes Borui Zhang's "research-experience-by-cluster" pattern adapted for
+% an undergraduate's smaller volume: each program may host one or two papers
+% / projects underneath.
+% xparse's `g` allows optional braced 3rd arg for date.
+% \cvtheme{Name}{Sub}            ← no date (e.g. publication clusters)
+% \cvtheme{Name}{Sub}{Date range} ← umbrella date (e.g. project clusters)
+\NewDocumentCommand{\cvtheme}{m m g}{%
+  \vspace{0.3em}%
+  \noindent\begin{minipage}[t]{0.74\linewidth}%
     \raggedright%
-    {\bfseries\color{ink}#1}%
+    {\bfseries\color{accent}#1}%
+    \ifx\relax#2\relax\else%
+      \enspace{\itshape\color{muted}\fontsize{9.5}{12.5}\selectfont\textemdash\ #2}%
+    \fi%
   \end{minipage}%
   \hfill%
-  \begin{minipage}[t]{0.26\linewidth}%
-    \raggedleft%
-    {\color{muted}\fontsize{9.5}{12}\selectfont#2}%
-  \end{minipage}%
-  \par\vspace{0.1em}%
+  \IfNoValueTF{#3}{}{%
+    \begin{minipage}[t]{0.24\linewidth}%
+      \raggedleft%
+      {\color{muted}\fontsize{9.5}{12}\selectfont#3}%
+    \end{minipage}%
+  }%
+  \par\vspace{0.25em}%
 }
 
 % --- Publication entry: title / authors / venue / links -------------------
@@ -170,19 +184,28 @@
   \ifx\relax#4\relax\else%
     \,\,{\fontsize{9.5}{12}\selectfont#4}%
   \fi%
-  \par\vspace{0.15em}%
+  \par\vspace{0.05em}%
   \endgroup%
 }
 
 % --- Labeled single-line item (Skills, Languages) -------------------------
 % \cvrow{Label}{Content}
+\newlength{\cvrowlabelwidth}
+\newlength{\cvrowbodywidth}
 \newcommand{\cvrow}[2]{%
   \begingroup%
-  \noindent\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.105\linewidth}@{\hspace{0.75em}}>{\RaggedRight\arraybackslash}X@{}}%
-    {\itshape\color{muted}\fontsize{10}{12.5}\selectfont#1} & {\fontsize{10}{12.5}\selectfont#2}%
-  \end{tabularx}%
-  \endgroup%
+  \setlength{\cvrowlabelwidth}{0.105\linewidth}%
+  \setlength{\cvrowbodywidth}{\dimexpr\linewidth-\cvrowlabelwidth-0.75em\relax}%
+  \noindent%
+  \begin{minipage}[t]{\cvrowlabelwidth}%
+    \vspace{0pt}\raggedright{\itshape\color{muted}\fontsize{10}{12.5}\selectfont#1}%
+  \end{minipage}%
+  \hspace{0.75em}%
+  \begin{minipage}[t]{\cvrowbodywidth}%
+    \vspace{0pt}\RaggedRight{\fontsize{10}{12.5}\selectfont#2}%
+  \end{minipage}%
   \par\vspace{0.05em}%
+  \endgroup%
 }
 
 % --- Itemize tightening ---------------------------------------------------
