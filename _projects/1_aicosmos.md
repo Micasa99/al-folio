@@ -15,6 +15,20 @@ related_publications: false
 **Status.** Live at [aicosmos.ai](https://aicosmos.ai).
 **Tagline.** *AI for Education × AI for Research — empowering teaching and discovery through agentic AI.*
 
+#### Walkthrough
+
+<div class="row mt-3 justify-content-center">
+  <div class="col-md-10">
+    <video class="img-fluid rounded z-depth-1" controls preload="metadata" poster="">
+      <source src="{{ '/assets/video/aicosmos/aicosmos-demo.mp4' | relative_url }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+<div class="caption">
+  Product walkthrough — AICosmos in action. Multi-agent orchestration for course-grade tutoring and learning workflows.
+</div>
+
 #### Why agents, not just chatbots?
 
 Today's AI in education is mostly a Q&A bot: it answers facts but doesn't *act* with the learner. Two gaps remain:
