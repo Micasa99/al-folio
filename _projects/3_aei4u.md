@@ -3,7 +3,7 @@ layout: page
 title: AEI4U
 permalink: /projects/aei4u/
 description: Analog Electronic Intelligent for You — an AI teaching assistant for Tsinghua's <em>Fundamentals of Analog Electronics</em>. 🏆 Grand Prize, 43rd Tsinghua Challenge Cup.
-img: assets/img/aei4u/poster.jpg
+img: assets/img/aei4u/logo.jpg
 importance: 3
 category: products
 related_publications: false
@@ -44,38 +44,13 @@ The bigger contribution is **AEI4U-as-a-pattern**: a low-code template that othe
 
 #### Gallery
 
-<div class="row mt-3">
-  <div class="col">
-    {% include figure.liquid loading="eager" path="assets/img/aei4u/poster.jpg" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-<div class="caption">
-  Project poster — Tsinghua 43rd Challenge Cup, AI Teaching-Agent Design Track. Three sections: <em>most expert</em> (course-content fidelity), <em>most considerate</em> (learner profiles), and <em>most deployable</em> (low-code product engineering).
-</div>
-
-<div class="row mt-3">
-  <div class="col-md-6 mt-3 mt-md-0">
+<div class="row mt-3 justify-content-center">
+  <div class="col-md-7 col-sm-10">
     {% include figure.liquid loading="eager" path="assets/img/aei4u/demo.jpg" class="img-fluid rounded z-depth-1" %}
   </div>
-  <div class="col-md-6 mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/aei4u/presentation.jpg" class="img-fluid rounded z-depth-1" %}
-  </div>
 </div>
 <div class="caption">
-  Left: live demo at the exhibition — Dify-THU workflow + course-facing front-end.<br>
-  Right: presenting AEI4U to Challenge Cup judges.
-</div>
-
-<div class="row mt-3">
-  <div class="col-md-6 mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/aei4u/tshirt.jpg" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-md-6 mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/aei4u/logo.jpg" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-<div class="caption">
-  Team identity — branded merchandise (left) and logo design (right).
+  Live demo at the Tsinghua 43rd Challenge Cup exhibition — Dify-THU workflow backbone driving a course-facing front-end (<em>Hi, Micasa, I'm AEI4U — your analog electronics learning partner</em>).
 </div>
 
 #### Links
